@@ -4,58 +4,12 @@
     <meta charset="UTF-8">
     <title>Puzzle</title>
     <script>
-        function changePic(part,number){
-            if(part==1){
-                let part1=document.getElementById("part1");
-                switch (number) {
-                    case 0:
-                    case 1: part1.src="images/Lion_Part1.png"; break;
-                    case 2: part1.src="images/Tiger_Part1.png"; break;
-                    case 3: part1.src="images/DaiBang_Part1.png"; break;
-                    case 4: part1.src="images/GauTrang_Part1.png"; break;
-                    case 5: part1.src="images/LungMat_Part1.png"; break;
-                }
-            }else if(part==2){
-            let part2=document.getElementById("part2");
-                switch (number) {
-                    case 0:
-                    case 1: part2.src="images/Lion_Part2.png"; break;
-                    case 2: part2.src="images/Tiger_Part2.png"; break;
-                    case 3: part2.src="images/DaiBang_Part2.png"; break;
-                    case 4: part2.src="images/GauTrang_Part2.png"; break;
-                    case 5: part2.src="images/LungMat_Part2.png"; break;
-                }
-            }else if(part==3){
-                let part3=document.getElementById("part3");
-                switch (number) {
-                    case 0:
-                    case 1: part3.src="images/Lion_Part3.png"; break;
-                    case 2: part3.src="images/Tiger_Part3.png"; break;
-                    case 3: part3.src="images/DaiBang_Part3.png"; break;
-                    case 4: part3.src="images/GauTrang_Part3.png"; break;
-                    case 5: part3.src="images/LungMat_Part3.png"; break;
-                }
-            }else if(part==4){
-                let part4=document.getElementById("part4");
-                switch (number) {
-                    case 0:
-                    case 1: part4.src="images/Lion_Part4.png"; break;
-                    case 2: part4.src="images/Tiger_Part4.png"; break;
-                    case 3: part4.src="images/DaiBang_Part4.png"; break;
-                    case 4: part4.src="images/GauTrang_Part4.png"; break;
-                    case 5: part4.src="images/LungMat_Part4.png"; break;
-                }
-            }else if(part==5){
-                let part5=document.getElementById("part5");
-                switch (number) {
-                    case 0:
-                    case 1: part5.src="images/Lion_Part5.png"; break;
-                    case 2: part5.src="images/Tiger_Part5.png"; break;
-                    case 3: part5.src="images/DaiBang_Part5.png"; break;
-                    case 4: part5.src="images/GauTrang_Part5.png"; break;
-                    case 5: part5.src="images/LungMat_Part5.png"; break;
-                }
-            }
+        let arrImg = ["Lion_Part","Tiger_Part","DaiBang_Part","GauTrang_Part","LungMat_Part"]
+        function changePic(part){
+            let random=Math.floor(Math.random()* (arrImg.length));
+            let partImg=document.getElementById("part"+part);
+            let name = arrImg[random]+part;
+            partImg.src = "images/"+name+".png";
 
         }
     </script>
@@ -63,19 +17,19 @@
 <body>
     <table border="0px" width="760px" cellpadding="0px" cellspacing="0px"  >
         <tr >
-            <td><img id="part1" src="images/Lion_Part1.png" onclick="changePic(1,Math.round((Math.random()*5)))" width="100%" height="100%"> </td>
+            <td><img id="part1" src="images/Lion_Part1.png" onclick="changePic(1)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part2" src="images/Tiger_Part2.png" onclick="changePic(2,Math.round((Math.random()*5)))" width="100%" height="100%"> </td>
+            <td><img id="part2" src="images/Tiger_Part2.png" onclick="changePic(2)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part3" src="images/DaiBang_Part3.png" onclick="changePic(3,Math.round((Math.random()*5)))" width="100%" height="100%"> </td>
+            <td><img id="part3" src="images/DaiBang_Part3.png" onclick="changePic(3)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part4" src="images/GauTrang_Part4.png" onclick="changePic(4,Math.round((Math.random()*5)))" width="100%" height="100%"> </td>
+            <td><img id="part4" src="images/GauTrang_Part4.png" onclick="changePic(4)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part5" src="images/LungMat_Part5.png" onclick="changePic(5,Math.round((Math.random()*5)))" width="100%" height="100%"> </td>
+            <td><img id="part5" src="images/LungMat_Part5.png" onclick="changePic(5)" width="100%" height="100%"> </td>
         </tr>
     </table>
 
