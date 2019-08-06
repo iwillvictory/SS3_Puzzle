@@ -8,28 +8,43 @@
         function changePic(part){
             let random=Math.floor(Math.random()* (arrImg.length));
             let partImg=document.getElementById("part"+part);
-            let name = arrImg[random]+part;
+            let baseName=arrImg[random];
+            let name = baseName + part;
             partImg.src = "images/"+name+".png";
+            partImg.alt = baseName;
+            checkFull();
+        }
+        function checkFull() {
+            let alt1=document.getElementById("part1").alt.trim();
+            let alt2=document.getElementById("part2").alt.trim();
+            let alt3=document.getElementById("part3").alt.trim();
+            let alt4=document.getElementById("part4").alt.trim();
+            let alt5=document.getElementById("part5").alt.trim();
+
+            if(alt1==alt2 && alt2==alt3 && alt3==alt4 && alt4==alt5){
+               alert("Very Good: Full picture ");
+            }
 
         }
+
     </script>
 </head>
 <body>
     <table border="0px" width="760px" cellpadding="0px" cellspacing="0px"  >
         <tr >
-            <td><img id="part1" src="images/Lion_Part1.png" onclick="changePic(1)" width="100%" height="100%"> </td>
+            <td><img id="part1" alt="Lion_Part" src="images/Lion_Part1.png" onclick="changePic(1)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part2" src="images/Tiger_Part2.png" onclick="changePic(2)" width="100%" height="100%"> </td>
+            <td><img id="part2" alt="Tiger_Part" src="images/Tiger_Part2.png" onclick="changePic(2)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part3" src="images/DaiBang_Part3.png" onclick="changePic(3)" width="100%" height="100%"> </td>
+            <td><img id="part3"  alt="DaiBang_Part" src="images/DaiBang_Part3.png" onclick="changePic(3)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part4" src="images/GauTrang_Part4.png" onclick="changePic(4)" width="100%" height="100%"> </td>
+            <td><img id="part4" alt="GauTrang_Part" src="images/GauTrang_Part4.png" onclick="changePic(4)" width="100%" height="100%"> </td>
         </tr>
         <tr>
-            <td><img id="part5" src="images/LungMat_Part5.png" onclick="changePic(5)" width="100%" height="100%"> </td>
+            <td><img id="part5" alt="LungMat_Part" src="images/LungMat_Part5.png" onclick="changePic(5)" width="100%" height="100%"> </td>
         </tr>
     </table>
 
